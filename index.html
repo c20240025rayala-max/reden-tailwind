@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="text-center bg-gray-500">
+    <h1>Reden Rayala</h1>
+    <button id="switch">switch</button>
+    <header>
+        <nav class="flex justify-between align-center ml-12 mr-12">
+            <span>@Rxyden</span>
+            <ul class="flex gap-20 p-0 m-0">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="text-red-900">
+        Hello world!
+    </h1>
+
+    <main class="flex wrap gap-10 p-12 m-12">
+        <section id="projects" class="bg-yellow-600 min-w-[280px] min-h-[500px] border-2 solid black p-5">
+            <h2 class="projects">My Projects</h2>
+            <p>Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+            </p>
+        </section>
+
+        <section id="services" class="bg-orange-800 min-w-[280px] min-h-[500px] border-2 solid black p-5">
+            <h2 class="services">My Services</h2>
+            <p>Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems
+                Analyst</p>
+        </section>
+
+        <section id="contact"  class=" bg-green-600 min-w-[280px] min-h-[500px] border-2 solid black p-5">
+            <h2 class="contact">Let's build together!</h2>
+            <form action="#">
+                <!-- Name -->
+                <label for="name" class="bg-gray-600">Name</label>
+                <input type="text" id="name" name="name" required class="border-1 solid black p-2">
+
+                <!-- Email -->
+                <label for="email" class="bg-gray-600">Email</label>
+                <input type="email" name="email" id="email" required class="border-1 solid black p-2">
+
+                <!-- Message -->
+                <label for="message" class="bg-gray-600">Message</label>
+                <textarea name="message" id="message" rows="5" required class="border-1 solid black p-5"></textarea>
+
+                <!-- Submit -->
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
