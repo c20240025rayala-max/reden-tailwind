@@ -1,64 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+.btn-primary {
+@apply px-6 py-3 bg-red-800 text-white hover:bg-orange-400 transition-colors dark:bg-slate-700;
+}
+.btn-secondary {
+@apply px-6 py-3 bg-slate-800 text-white hover:bg-purple-700 transition-colors dark:bg-rose-700;
+}
+}
+</style>
 </head>
-<body class="text-center bg-gray-500">
-    <h1>Reden Rayala</h1>
-    <button id="switch">switch</button>
+
+<body class="text-center dark:bg-slate-900 bg-white text-slate-900 dark:text-white">
+    <h1 class="text-3xl font-bold">Reden Rayala</h1>
+
     <header>
-        <nav class="flex justify-between align-center ml-12 mr-12">
-            <span>@Rxyden</span>
-            <ul class="flex gap-20 p-0 m-0">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+        <h1 class="text-3xl text-red-500 font-bold underline">
+            Hello world!
+        </h1>
+        <nav class="flex justify-between items-center mx-[50px] max-[600px]:flex-col">
+            <span class="text-green-500 text-[50px]">
+                @Reden Rayala
+            </span>
+            <ul class="flex gap-5 list-none max-[600px]:flex-col p-5 bg-slate-700 rounded-[15px] gap-10">
+                <li><a href="#projects" class="hover:text-red-500">Projects</a></li>
+                <li><a href="#services" class="hover:text-red-300">Services</a></li>
+                <li><a href="#contact" class="hover:text-red-200">Contact Me</a></li>
             </ul>
         </nav>
     </header>
 
-    <h1 class="text-red-900">
-        Hello world!
-    </h1>
-
-    <main class="flex wrap gap-10 p-12 m-12">
-        <section id="projects" class="bg-yellow-600 min-w-[280px] min-h-[500px] border-2 solid black p-5">
-            <h2 class="projects">My Projects</h2>
-            <p>Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+    <main class="flex flex-wrap gap-[30px] p-[50px] m-[50px] max-[600px]:p-[15px]
+     max-[600px]:m-[10px] btn-secondary font-serif">
+        <!-- Projects -->
+        <section id="projects" class="flex-1 min-w-[280px] border-2 border-black p-5 
+        bg-blue-400 max-[600px]:min-w-0">
+            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
+                My Projects
+            </h2>
+            <p>
+                Personal portfolio, payroll system, company website,startup website, and compliance monitoring system.
             </p>
         </section>
-
-        <section id="services" class="bg-orange-800 min-w-[280px] min-h-[500px] border-2 solid black p-5">
-            <h2 class="services">My Services</h2>
-            <p>Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems
-                Analyst</p>
+        <!-- Services -->
+        <section id="services" class="flex-1 min-w-[280px] border-2 border-black p-5 
+        bg-red-500 max-[600px]:min-w-0">
+            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
+                My Services
+            </h2>
+            <p>
+                Website Creation, System Creation, AI Automation,Database Management, Project Management, Systems
+                Analyst
+            </p>
         </section>
-
-        <section id="contact"  class=" bg-green-600 min-w-[280px] min-h-[500px] border-2 solid black p-5">
-            <h2 class="contact">Let's build together!</h2>
-            <form action="#">
-                <!-- Name -->
-                <label for="name" class="bg-gray-600">Name</label>
-                <input type="text" id="name" name="name" required class="border-1 solid black p-2">
-
-                <!-- Email -->
-                <label for="email" class="bg-gray-600">Email</label>
-                <input type="email" name="email" id="email" required class="border-1 solid black p-2">
-
-                <!-- Message -->
-                <label for="message" class="bg-gray-600">Message</label>
-                <textarea name="message" id="message" rows="5" required class="border-1 solid black p-5"></textarea>
-
-                <!-- Submit -->
-                <button type="submit">Send Message</button>
+        <!-- Contact -->
+        <section id="contact" class="flex-1 min-w-[280px] border-2 border-black p-5 
+        bg-green-500 max-[600px]:min-w-0">
+            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
+                Let's build together!
+            </h2>
+            <form action="#" class="flex flex-col gap-5">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required class="border border-black-400 p-2">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required class="border border-black-400 p-2">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required class="border border-black-400 p-2">
+                </textarea>
+                <button type="submit" class="bg-black text-white p-3 rounded-[15px] hover:bg-red-500">
+                    Send Message
+                </button>
             </form>
         </section>
     </main>
+    <button id="switch"
+        class="bg-black text-white p-(50px) rounded-[5px] transition-colors duration-500 ease-in-out hover:bg-red-600">switch</button>
+    <button id="toggledark"
+        class="bg-black text-white p-(50px) rounded-[5px] transition-colors duration-500 ease-in-out hover:bg-red-600">Toggledark</button>
+
+    <button id="btn-primay"
+        class="bg-black text-white p-(50px) rounded-[5px] transition-colors duration-500 ease-in-out hover:bg-red-600">btn</button>
     <script src="script.js"></script>
+    <script>
+        const toggleDarkButton = document.querySelector('#toggledark');
+        const html = document.querySelector('html');
+
+        toggleDarkButton.addEventListener('click', function () {
+            html.classList.toggle('dark');
+        });
+    </script>
+
 </body>
 
 </html>
